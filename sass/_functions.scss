@@ -1,0 +1,21 @@
+// FUNCTIONS
+//
+// CHECK FOR GOOGLE FONTS
+// If a Google Font has been defined, import it
+// =========
+@if variable-exists(font-url--google-primary) {
+    @import url($font-url--google-primary);
+}
+@if variable-exists(font-url--google-secondary) {
+    @import url($font-url--google-secondary);
+}
+@if variable-exists(font-url--google-thirdy) {
+    @import url($font-url--google-thirdy);
+}
+
+// CONVERT PX TO EM
+// Will convert a px to ems when it is called
+// =========
+@function em($target, $context: $base_font-size) {
+    @return ($target / $context) * 1em;
+}

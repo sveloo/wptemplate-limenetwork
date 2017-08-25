@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// 1. RESET CSS & LOAD BASE FRAMEWORK
+// Some frameworks already rest for you
+@import 'frameworks/materialize/_materialize';
+@import 'frameworks/slick/_slick-theme';
+
+// 2. IMPORT ALL YOUR UTILITIES & VARIABLE DEFINITIONS
+// Import all your definitions in order.
+@import 'config';
+@import 'functions';
+@import 'helpers';
+@import 'mixins';
+
+// 4. IMPORT GLOBAL STYLES
+// These are the global styles for your project
+@import 'base';
+
+// LAYOUT STYLES
+// These are the layout styles for your project
+
+// PAGE STYLES
+// These are page specific styles for your project
+
+// MODULE STYLES
+// There are module specific sytles for your project
+
+// CUSTOM SYTLES
+// Any other custom tweaks would go here
+//

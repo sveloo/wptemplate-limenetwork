@@ -1,0 +1,108 @@
+// VARIABLES
+// Setup all the varibles here 
+
+// FONTS
+// List all your font URLs and font family categories here
+// =========
+$font-url--google-primary           : 'https://fonts.googleapis.com/css?family=Montserrat';
+$font-url--google-secondary         : 'https://fonts.googleapis.com/css?family=Muli';
+$font-family--primary               : 'Montserrat', sans-serif;
+$font-family--secondary             : 'Muli', sans-serif;
+
+// FONT WEIGHTS
+// Definite your font weights here, but only what you need
+// ============
+$thinner    : 100;
+$thin       : 300;
+$normal     : 400;
+$bold       : 700;
+$bolder     : 900;
+
+
+// DESCRIPTIVE NAMES FOR COLORS
+// List all the color codes you are using here and give them a name you can remember
+// =========
+$dark-purple 		: #431836;
+$purple 	    	: #981254;
+$light-purple	    : lighten(#431836, 20%);
+
+$light-blue         : #4A9ED4;
+$blue 				: #3A9DD5;
+$dark-blue       	: #092B42;
+
+$green        	: #C9DE92;
+
+$orange				: #F78E1E;
+
+
+// COLOR USAGE
+// Assign a color to each system color variable here
+// =========
+$primary-color		: $dark-purple;
+
+// FONT TEXT VARIABLES
+// Assign the pixel sizes of these font variables for use in your project.
+// =========
+$base_font-size 		: 18px;
+$base_line-height 		: 1.6;
+$base_letter-spacing	: 1px;
+
+//
+// FONT SIZES
+//
+h1, h2, h3, h4, h5 {
+    font-family: $font-family--primary !important;
+}
+p, li, span, a {
+    font-family: $font-family--secondary !important;
+}
+h1 {
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+}
+h2 {
+    font-size: 3rem !important;
+    font-weight: 300 !important;
+}
+h3 {
+    font-size: 2.5rem !important;
+    font-weight: 100 !important;
+}
+h4 {
+    font-size: 1.5rem !important;
+    font-weight: 100 !important;
+}
+
+//
+// TRANSITION
+//
+@mixin transition-default {
+	transition: .5s ease-out;
+}
+
+//
+// BUTTONS
+//
+.btn-purple {
+    @include transition-default;
+    background: $light-purple;
+    color: white;
+    &:hover {
+        background: $orange;
+        color: white
+    }
+}
+
+
+//
+// GRADIENT BACKGROUNDS
+//
+@mixin green-bg {
+	background-image: linear-gradient(rgba(0,130,170,0),rgba(255, 255, 255, 1)), url(images/green-bg.jpg);
+}
+@mixin lime-bg {
+	background-image: linear-gradient(rgba(0,130,170,0),rgba(255, 255, 255, 1)), url(images/lime-bg.jpg);
+}
+@mixin purple-gradient {
+    background-image: linear-gradient(to right, $dark-purple , $light-purple);
+}

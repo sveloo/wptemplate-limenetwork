@@ -1,0 +1,359 @@
+// Base styles
+
+// * {
+//     border: 1px solid red;
+// }
+
+html {
+    font-family: $font-family--primary !important;
+}
+
+body {
+    font-size: $base_font-size;
+    line-height: $base_line-height;
+    letter-spacing: $base_letter-spacing;
+}
+
+
+
+//
+// HEADER & NAVBAR
+//
+nav {
+    @include purple-gradient;
+    height: 80px;
+    
+    .brand-logo {
+        height: 70px;
+        width: auto;
+        padding: 5px;
+
+        img {
+            height: 70px;
+            padding: 5px 0;
+        }
+
+        .logo-text {
+            font-weight: 700 !important;
+            font-size: em(24px) !important;
+            letter-spacing: 3px !important;
+            position: absolute !important;
+            top: 7px !important;
+            margin-left: 10px !important;
+            .green-text {
+                color: #79A038 !important;
+                background-color: none !important;
+            }
+            .light-green-text {
+                color: #C9DE92 !important;
+                background-color: none !important;
+            }
+        }
+
+    }
+
+    ul li a {
+        font-size: em(20px);
+        padding: 8px 15px;
+        color: white;
+        &:hover {
+            color: $green;
+        }
+    }
+
+}
+
+//
+// PAGE HEADER
+//
+.page-header {
+    background: linear-gradient(rgba(0,130,170,0),rgba(255, 255, 255, 1)), url(../images/green-bg.jpg);
+    height: 200px;
+    padding: 50px 0px 0px 0px;
+}
+
+//
+// SECTIONS
+//
+.section {
+    margin: 25px 0px;
+}
+
+//
+// FOOTER
+//
+footer {
+    @include purple-gradient;
+    a {
+        color: white;
+        &:hover {
+            color: $green;
+        }
+    }
+}
+//
+// STANDARD LINKS
+//
+a {
+    color: $purple;
+    @include transition-default;
+    &:hover {
+        color: $orange;
+    }
+    i.material-icons {
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+    }
+}
+
+// TABLES 
+.lime-table {
+    thead {
+        @include purple-gradient;
+        color: white;
+        th {
+            border-radius: 0px !important;
+            padding: 15px !important;
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid $light-purple !important;
+        }
+        td {
+            vertical-align: top !important;
+        }
+    }
+}
+
+
+// FORMS
+.input-field {
+    /* label color */
+    label {
+        color: #000;
+    }
+    /* label focus color */
+    input[type=text]:focus + label {
+        color: $light-purple;
+    }
+    /* label underline focus color */
+    input[type=text]:focus {
+        border-bottom: 1px solid $light-purple;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    .prefix.active {
+        color: $light-purple;
+    }
+    ul.multiple-select-dropdown {
+        li span {
+            color: #000000 !important;
+        }
+    }
+    ul.select-dropdown.active {
+        li span {
+            color: $light-purple !important;
+        }
+        li.disabled span {
+            color: grey !important;
+        }
+    }
+    [type=checkbox]:checked+label:before {
+        border-right: 2px solid $green !important;
+        border-bottom: 2px solid $green !important;
+    }
+}    
+
+
+
+
+
+
+
+
+// FRONT PAGE
+//
+// HERO BACKGROUND
+.hero {
+    background: linear-gradient(rgba(0,130,170,0),rgba(255, 255, 255, 1)), url(../images/green-bg.jpg);
+    height: 750px;
+
+}
+
+.slick-slider {
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 900px;
+}
+
+
+
+// MASTER SLIDER
+.ms-slide-info {
+    margin: 30px 0px !important;
+    min-height: 50px !important;
+}
+
+// FEATURE PDFS
+.features {
+    .card-panel {
+        padding: 0px;
+    }
+}
+// QUICKLINKS
+.quicklinks {
+    h4 {
+        font-size: em(25px);
+        color: #fff;
+        margin: 10px;
+        padding: 0px;
+    }
+    li a {
+        font-size: em(18px);
+    }
+}
+.collection.with-header .collection-header {
+    @include purple-gradient;
+}
+.collection {
+    ul {
+        margin: 0px;
+    }
+    border: 0px;
+    a.collection-item {
+        color: $purple;
+    }
+    a.collection-item:not(.active):hover {
+        background: white;
+        color: $orange;  
+    }
+}
+// TWITTER FEED
+.twitter {
+    @include purple-gradient;
+}
+.twitter-feed {
+    padding: 20px;
+    .twitter-logo {
+        width: 60px;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        top: 16px;
+        border-radius: 5px;
+        
+    }
+    .tweet-time {
+        margin: 0px;
+        font-size: em(8px);
+        color: white;
+    }
+    .tweet-text {
+        margin: 0px;
+        font-size: em(24px) !important;
+        color: white;
+    }
+    a {
+        color: $green;
+        @include transition-default;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+//
+// SOCIAL
+//
+.social-logo {
+    margin: 20px 10px;
+    height: 40px;
+}
+// PATHWAYS
+
+//
+// PARTNERS
+//
+.partners {
+    .footnote {
+        font-size: em(10px);
+    }
+}
+
+
+//
+// PUBLICATIONS 
+//
+span.badge.new {
+    background: $light-purple;
+}
+
+
+//
+// STAFF PROFILES
+//
+.staff-profiles {
+    .card {
+        .card-content {
+            .card-image {
+                .btn-floating {
+                    background-color: $light-purple !important;
+                }
+            }
+            .card-title {
+                font-size: em(20px);
+                font-weight: 700;
+            }
+            p {
+                font-size: 14px !important;
+                margin: 10px 0;
+            }
+            p.telephone, p.email, p.website {
+                font-size: em(12px) !important;
+            }
+            i.material-icons {
+                font-size: em(12px) !important;
+                margin-right: 5px;
+            }
+
+        }
+    }
+}
+
+
+
+
+// RESOURCES HUB
+table.resources-results {
+    font-size: 14px !important;
+    a {
+        font-weight: 700 !important;
+    }
+}
+
+.pagination li.active {
+    background: $light-purple !important;
+}
+
+// Large Mobiles
+@media  (max-width: 992px) {
+
+    .brand-logo {
+        left: 0;
+        transform: translateX(0%);
+    }
+
+    nav .button-collapse i {
+        height: 80px !important;
+        line-height: 80px !important;
+    }
+}
+
+
