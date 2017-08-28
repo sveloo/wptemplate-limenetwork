@@ -6,48 +6,8 @@
 
 <?php get_template_part('includes/content', 'twitter'); ?>
 
-<div class="section features">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m4">
+<?php get_template_part('includes/content', 'features'); ?>
 
-                <?php get_template_part('includes/content', 'latest-newsletter'); ?>
-                
-            </div>  
-
-            <div class="col s12 m4">
-                <div class="quicklinks">
-                    <ul class="collection with-header orange-gradient">
-                        <li class="collection-header"><h4>Case Studies</h4></li>
-                    </ul>
-                </div>
-                <div class="card-panel hoverable">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/good-practice.jpg" class="responsive-img">
-                </div>
-            </div>   
-            <div class="col s12 m4">
-                <div class="quicklinks">
-                      <ul class="collection with-header">
-                        <li class="collection-header orange-gradient"><h4>Quicklinks</h4></li>
-                        <a href="#!" class="collection-item">Lime Connection VII</a>
-                        <a href="#!" class="collection-item">Resources Hub</a>
-                        <a href="#!" class="collection-item">Indigenous Pathways Into Medicine</a>
-                        <a href="#!" class="collection-item">Accreditation Tools</a>
-                        <a href="#!" class="collection-item">Slice of Lime Seminars</a>
-                        <a href="#!" class="collection-item">Good Practice Case Studies</a>
-                        <a href="#!" class="collection-item">Newsletters</a>
-                      </ul>           
-                </div>
-                <div class="quicklinks">
-                    <ul class="collection with-header">
-                        <li class="collection-header orange-gradient"><h4>Social</h4></li>
-                        <li><a href=""><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/youtube.png"></a><a href=""><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/facebook.png"></a></li>
-                    </ul>           
-                </div>
-            </div>    
-        </div>
-    </div>
-</div>
 
 <div class="section pathways">
     <div class="container">

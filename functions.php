@@ -28,4 +28,10 @@
     }
     add_action('wp_enqueue_scripts', 'lime_theme_scripts');
 
+
+    // ACF OPTIONS PAGE
+    if( function_exists('acf_add_options_page') ) {
+        acf_add_options_page();
+    }
+    
 ?>
