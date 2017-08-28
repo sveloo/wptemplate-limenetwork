@@ -6888,10 +6888,6 @@ a {
   transform: translate(-50%, -50%);
   width: 900px; }
 
-.ms-slide-info {
-  margin: 30px 0px !important;
-  min-height: 50px !important; }
-
 .features .card-panel {
   padding: 0px; }
 
@@ -6920,7 +6916,7 @@ a {
   background-image: linear-gradient(to right, #431836, #8e3373); }
 
 .twitter-feed {
-  padding: 20px; }
+  padding: 20px 10px; }
   .twitter-feed .twitter-logo {
     width: 60px;
     height: auto;
@@ -6929,19 +6925,36 @@ a {
     position: relative;
     top: 16px;
     border-radius: 5px; }
-  .twitter-feed .tweet-time {
+  .twitter-feed .fts-twitter-image {
+    display: none; }
+  .twitter-feed .tweeter-info .fts-right {
+    padding-left: 0px; }
+  .twitter-feed .fts-twitter-reply-wrap-left {
+    display: none; }
+  .twitter-feed .fts-tweeter-wrap .tweeter-info {
+    border: 0px; }
+  .twitter-feed .fts-twitter-text {
     margin: 0px;
-    font-size: 0.4444444444em;
+    font-size: 1.6666666667em !important;
+    line-height: 1.6 !important;
     color: white; }
-  .twitter-feed .tweet-text {
-    margin: 0px;
-    font-size: 1.3333333333em !important;
-    color: white; }
-  .twitter-feed a {
-    color: #C9DE92;
+    .twitter-feed .fts-twitter-text a {
+      color: #C9DE92 !important;
+      font-size: 1.1111111111em !important;
+      transition: .5s ease-out; }
+      .twitter-feed .fts-twitter-text a:hover {
+        color: #F78E1E !important; }
+  .twitter-feed .fts-twitter-full-name {
+    display: none; }
+  .twitter-feed a.fts-twitter-at-name {
+    color: #C9DE92 !important;
+    font-size: 1.1111111111em !important;
     transition: .5s ease-out; }
-    .twitter-feed a:hover {
-      color: #F78E1E; }
+    .twitter-feed a.fts-twitter-at-name:hover {
+      color: #F78E1E !important; }
+  .twitter-feed span.time a {
+    color: white !important;
+    margin: 0px; }
 
 .social-logo {
   margin: 20px 10px;

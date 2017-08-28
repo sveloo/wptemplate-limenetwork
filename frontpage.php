@@ -4,22 +4,7 @@
 
 <?php get_template_part('includes/content', 'slider'); ?>
 
-<!-- Twitter -->
-<div class="section twitter valign-wrapper">
-    <div class="container">
-        <div class="row twitter-feed">
-            <div class="col s1">
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" class="twitter-logo"></a>
-            </div>
-            <div class="col s11">    
-                <div class="tweet">
-                    <p class="tweet-text">This is your latest tweet that appears here automatically and a link to something like this <a href="#">https://t.co/oU3Ex7KXe8</a></p>
-                    <p class="tweet-time">3 hours ago</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php get_template_part('includes/content', 'twitter'); ?>
 
 <div class="section features">
     <div class="container">

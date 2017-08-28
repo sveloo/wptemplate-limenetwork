@@ -194,12 +194,6 @@ a {
 
 
 
-// MASTER SLIDER
-.ms-slide-info {
-    margin: 30px 0px !important;
-    min-height: 50px !important;
-}
-
 // FEATURE PDFS
 .features {
     .card-panel {
@@ -239,7 +233,7 @@ a {
     @include purple-gradient;
 }
 .twitter-feed {
-    padding: 20px;
+    padding: 20px 10px;
     .twitter-logo {
         width: 60px;
         height: auto;
@@ -247,25 +241,48 @@ a {
         padding: 0px;
         position: relative;
         top: 16px;
-        border-radius: 5px;
-        
+        border-radius: 5px;   
     }
-    .tweet-time {
+    .fts-twitter-image {
+        display: none;
+    }
+    .tweeter-info .fts-right {
+        padding-left: 0px;
+    }
+    .fts-twitter-reply-wrap-left {
+        display: none;
+    }
+    .fts-tweeter-wrap .tweeter-info {
+        border: 0px;
+    }
+    .fts-twitter-text {
         margin: 0px;
-        font-size: em(8px);
-        color: white;
+        font-size: em(30px) !important;
+        line-height: 1.6 !important;
+        color: white; 
+        a {
+            color: $green !important;
+            font-size: em(20px) !important;
+            @include transition-default;
+            &:hover {
+                color: $orange !important;
+            }
+        }
     }
-    .tweet-text {
-        margin: 0px;
-        font-size: em(24px) !important;
-        color: white;
+    .fts-twitter-full-name {
+        display: none;
     }
-    a {
-        color: $green;
+    a.fts-twitter-at-name {
+        color: $green !important;
+        font-size: em(20px) !important;
         @include transition-default;
         &:hover {
-            color: $orange;
+            color: $orange !important;
         }
+    }
+    span.time a {
+        color: white !important;
+        margin: 0px;
     }
 }
 
