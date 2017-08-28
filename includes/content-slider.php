@@ -25,7 +25,7 @@
             </a>
         </div>
 
-         <?php endwhile; endif; ?>
+        <?php endwhile; endif; ?>
     
     </div>
 </div>

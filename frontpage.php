@@ -10,15 +10,11 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m4">
-                <div class="quicklinks">
-                    <ul class="collection with-header orange-gradient">
-                        <li class="collection-header"><h4>Newsletter</h4></li>
-                    </ul>
-                </div>
-                <div class="card-panel hoverable">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/newsletter.jpg" class="responsive-img">
-                </div>
+
+                <?php get_template_part('includes/content', 'latest-newsletter'); ?>
+                
             </div>  
+
             <div class="col s12 m4">
                 <div class="quicklinks">
                     <ul class="collection with-header orange-gradient">
