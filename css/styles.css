@@ -6747,7 +6747,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 h1, h2, h3, h4, h5 {
   font-family: "Montserrat", sans-serif !important; }
 
-p, li, span, a {
+p {
   font-family: "Muli", sans-serif !important; }
 
 h1 {

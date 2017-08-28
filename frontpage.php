@@ -2,17 +2,7 @@
 
 <?php get_header(); ?>
 
-<!-- Slider -->
-        <div class="hero center-align">
-
-            <div class="slick-slider">
-                <div><img src="<?php echo get_template_directory_uri(); ?>/images/slide01.jpg" class="responsive-img"><h3>This slider can be used for important annoucements.</h3></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/images/slide02.jpg" class="responsive-img"><h3>This slider can be used for important annoucements.</h3></div>
-                <div><img src="<?php echo get_template_directory_uri(); ?>/images/slide03.jpg" class="responsive-img"><h3>This slider can be used for important annoucements.</h3></div>
-            </div>
-        
-        </div>
-
+<?php get_template_part('includes/content', 'slider'); ?>
 
 <!-- Twitter -->
 <div class="section twitter valign-wrapper">

@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.slick-slider').slick({
         autoplay: true,
         dots: true,
+        arrows: false,
         infinite: true,
         speed: 300,
         fade: true,
@@ -10,7 +11,8 @@ $(document).ready(function(){
     });
 
     $(".button-collapse").sideNav();
- 
+
+
     $('select').material_select();
 
 });
