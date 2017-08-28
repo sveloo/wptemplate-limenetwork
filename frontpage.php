@@ -8,7 +8,6 @@
 
 <?php get_template_part('includes/content', 'features'); ?>
 
-
 <div class="section pathways">
     <div class="container">
         <div class="row">

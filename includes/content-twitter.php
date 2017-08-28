@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row twitter-feed">
             <div class="col s1">
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" class="twitter-logo"></a>
+                <a href="https://twitter.com/lime__network"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" class="twitter-logo"></a>
             </div>
             <div class="col s11">    
                 <div class="tweet">

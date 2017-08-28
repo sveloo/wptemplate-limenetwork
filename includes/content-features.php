@@ -66,7 +66,10 @@
                 <div class="quicklinks">
                     <ul class="collection with-header">
                         <li class="collection-header"><h4>Social</h4></li>
-                        <li><a href=""><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/youtube.png"></a><a href=""><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/facebook.png"></a></li>
+                        <a href="https://www.youtube.com/user/LIMENetworkProgram" target="_blank"><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/youtube.png"></a>
+                        <a href="https://www.facebook.com/LIMEnetwork" target="_blank"><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/facebook.png"></a> 
+                        <a href=""><img class="social-logo" src="<?php echo get_template_directory_uri(); ?>/images/instagram.png"></a>
+
                     </ul>           
                 </div>
             </div>    
