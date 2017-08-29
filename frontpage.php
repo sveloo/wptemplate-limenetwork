@@ -58,17 +58,42 @@
         <div class="col s12">
             <div class="quicklinks">
                   <ul class="collection with-header">
-                    <li class="collection-header"><h4>Featured Resources</h4></li>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Publication"></span>Race and Public Health | Harvard School of Public Health</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Journal"></span>Mental Health in Remote and Rural Communities</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Book"></span>Aboriginal and Torres Strait Islander Health Performance Framework, 2017</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Video"></span>The health of Indigenous Australians</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Publication"></span>Indigenous Student Matriculation into Medical School: Policy and Progress</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Paper"></span>The Development of an Indigenous Health Curriculum for Medical Students</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Book"></span>Keynote: Race is real and so is racism - Making the case for teaching race in Indigenous health curriculum</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Presenation"></span>Keynote Presentation: Externalising a complicated situation - Teaching Racism in an Indigenous curriculum: A case study</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Publication"></span>Unsafe learning environments: Indigenous medical students' experiences of racism</a>
-                    <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="Paper"></span>Shifting Understandings: Do scenario-based clinical decisions change with immersion?</a>
+                    <li class="collection-header"><h4>Recently Added Resources</h4></li>
+
+                    <?php
+                        $args = array(
+                            'post_type' => 'resource',
+                            'post_status' => 'publish',
+                            'posts_per_page' => 10,
+                            'order' => 'DESC'
+                        );
+                        $the_query = new WP_Query($args);
+                    ?>
+                    
+                    <?php if (have_posts()) : while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+
+                    <a href="<?php the_permalink(); ?>" class="collection-item">
+                
+
+                        <span class="new badge" data-badge-caption="
+
+                                <?php
+                                    $terms = get_field('resource_type');
+                                    if( $terms ):
+                                        foreach( $terms as $term ):
+                                            echo $term->name;
+                                        endforeach;
+                                    endif;
+                                ?>
+
+                        "></span>
+
+                        <?php the_title(); ?>
+
+                    </a>
+
+                    <?php endwhile; endif; ?>
+
                   </ul>           
             </div>
         </div>
@@ -77,13 +102,12 @@
 
 <div class="section partners">
     <div class="container">
-            <div class="col s12 center-align">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/md_logo.gif" class="responsive-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/unimelb.jpg" class="responsive-img">
-                <p class="footnote">The LIME Network is hosted by the Faculty of Medicine, Dentistry and Health Sciences at the University of Melbourne.<br>This website was funded by the Australian Government Department of Health.<br> The views expressed on the website do not necessarily represent the position of the Australian Government.</p>
+        <div class="col s12 center-align">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/md_logo.gif" class="responsive-img">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/unimelb.jpg" class="responsive-img">
+            <p class="footnote">The LIME Network is hosted by the Faculty of Medicine, Dentistry and Health Sciences at the University of Melbourne.<br>This website was funded by the Australian Government Department of Health.<br> The views expressed on the website do not necessarily represent the position of the Australian Government.</p>
 
-                <p class="footnote">LIME logo and artwork by Michelle Smith and Kevin Murray</p>
-            </div>
+            <p class="footnote">LIME logo and artwork by Michelle Smith and Kevin Murray</p>
         </div>
     </div>
 </div>
