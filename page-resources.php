@@ -2,7 +2,6 @@
  
 <?php get_header(); ?>
 
-
 <div class="page-header center-align">
     <h1><?php the_title(); ?></h1>
 </div>
@@ -104,7 +103,7 @@
 
 				?>	        
 		          	<tr>
-						<td><a href="<?php the_field('link'); ?>"><?php the_title(); ?></a></td>
+						<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 						<td><?php the_title(); ?></td>
 						<td>
 							<!-- GET ACF TAXONOMY -->

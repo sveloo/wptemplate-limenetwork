@@ -52,7 +52,6 @@
     function resourcehub_filter() {
 
         // GET VARS
-
         $the_topic_filter = $_POST['send_the_topic_filter'];
         $the_resourcetype_filter = $_POST['send_the_resourcetype_filter'];
 
@@ -66,7 +65,7 @@
             $args = array(
                 'post_type' => 'resource',
                 'post_status' => 'publish',
-                'posts_per_page' => 3,
+                'posts_per_page' => 10,
                 'orderby' => 'date',
                 'order' => 'DESC',
             );
@@ -87,12 +86,13 @@
                     array(
                         'taxonomy' => 'topic_tax',
                         'field'    => 'slug',
-                        'terms'    => array( $the_topic_filter )
+                        'terms'    => $the_topic_filter
                     ),
+
                     array(
                         'taxonomy' => 'resource_tax',
                         'field'    => 'slug',
-                        'terms'    => array( $the_resourcetype_filter )
+                        'terms'    => $the_resourcetype_filter
                     ),
 
                 ),
@@ -104,7 +104,7 @@
         foreach ($myposts as $post) : start_wp(); ?>
 
             <tr>
-                <td><a href="<?php the_field('link'); ?>"><?php the_title(); ?></a></td>
+                <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
                 <td><?php the_title(); ?></td>
                 <td>
                     <!-- GET ACF TAXONOMY -->
