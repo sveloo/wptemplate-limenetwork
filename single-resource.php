@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <div class="page-header center-align">
 	<div class="container">
   		<h1><?php the_title(); ?></h1>
