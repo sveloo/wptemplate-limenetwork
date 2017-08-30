@@ -100,6 +100,69 @@
     </div>
 </div>
 
+<script>
+
+    $(document).ready(function(){
+
+        // RESET
+        // $('#reset').click(function(){
+        //     $('#input_text').val('');
+        //     $('#the_theme').val('all');
+        //     $('#the_project').val('all');
+
+        // });
+
+        // PUBLICATION FILTERS (all done by AJAX)
+
+        // function publicationFilters(){
+        //     var the_theme_filter = $('#the_theme option:selected').val();
+        //     var the_signature_filter = $('#the_project option:selected').val();
+        //     var the_input_text = $('#input_text').val();
+        //     var ready_to = '"'+the_input_text+'"';
+
+        //     $('#results').html('');
+        //     $('#results').html('<tr><td colspan="5" class="thinking"><img src="/wp-content/themes/cbns/images/ajax-spinner.gif" /></td></tr>');
+
+        //     // AJAX CALL
+        //     var data = {
+        //         action: 'publications_filter',
+        //         send_the_input_text : the_input_text,
+        //         send_the_theme_filter : the_theme_filter,
+        //         send_the_signature_filter : the_signature_filter,
+        //     };
+
+        //     jQuery.post(ajaxurl, data, function(response) {
+        //         $('#results').html('');
+        //         $('#results').html(response);
+
+        //         if(!$.trim(response)){
+        //             $('#results').html('<tr><td colspan="5" class="thinking">No Results to show, please try again.</td></tr>');
+        //         }
+
+        //     });
+
+        // }
+
+        $('#the_search').click(function(){
+            // publicationFilters();
+            console.log("Searching");
+        });
+
+        // $(document).keypress(function(event){
+
+        // var keycode = (event.keyCode ? event.keyCode : event.which);
+        //     if(keycode == '13'){
+        //         publicationFilters();
+        //     }
+
+        // });
+
+    });
+
+
+
+</script>
+
 <div class="section partners">
     <div class="container">
         <div class="col s12 center-align">

@@ -27,7 +27,7 @@
 
         <div class="row">
 	        <div class="input-field col s12">
-	         	<input placeholder="Search using resource title, author, year, keywords. You can also use the filters below" id="search terms" type="text">
+	         	<input id="input_text" placeholder="Search using resource title, author, year, keywords. You can also use the filters below" id="search terms" type="text">
 	         	<label for="search terms">Search terms</label>
 	        </div>
 
@@ -35,7 +35,7 @@
 
 	    <div class="row">
 			<div class="input-field col s5">
-			    <select multiple>
+			    <select id="the_topic_selecter" multiple>
 			    	<option value="" disabled selected>You can filter by topic</option>
 						<?php
 							$terms = get_terms('topic_tax');
@@ -51,8 +51,8 @@
 			    <label>Topic</label>
 			</div>
 			<div class="input-field col s5">
-			    <select multiple>
-		      		<option value="" disabled selected>Or by media</option>
+			    <select id="the_resourcetype_selecter" multiple>
+		      		<option value="" disabled selected>Or by resource type</option>
 						<?php
 							$terms = get_terms('resource_tax');
 							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
@@ -64,7 +64,7 @@
 							 }
 		    			?>
 		    	</select>
-		    	<label>Media</label>
+		    	<label>Resource type</label>
 			</div>
 	        <div class="col s2">
 	        	<a id="the_search" class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Search</a>
@@ -78,7 +78,7 @@
 		              <th>Title</th>
 		              <th>Author(s)</th>
 		              <th>Topic</th>
-		              <th>Media</th>
+		              <th>Resource type</th>
 		          	</tr>
 		        </thead>
 
@@ -143,7 +143,7 @@
 						rewind_posts();
 
 					?>
-		         	          					          					          	
+
 		        </tbody>
 		      </table>
     
@@ -165,5 +165,54 @@
         </div>
     </div>
 </div>
+
+<script>
+
+	$(document).ready(function(){
+
+		// RESOURCE HUB FILTERS
+		function filterResources(){
+			var the_topic_filter = $('#the_topic_selecter').val();
+			var the_resourcetype_filter = $('#the_resourcetype_selecter').val();
+
+			$('#results').html('');
+			$('#results').html('<tr><td colspan="5" class="thinking"><img src="/wp-content/themes/limenetwork/images/ajax-spinner.gif" /></td></tr>');
+
+			// AJAX CALL
+			var data = {
+				action: 'resourcehub_filter',
+				send_the_topic_filter : the_topic_filter,
+				send_the_resourcetype_filter : the_resourcetype_filter,
+			};
+
+			// RESPONSE
+			jQuery.post(ajaxurl, data, function(response) {
+				$('#results').html('');
+				$('#results').html(response);
+
+				if(!$.trim(response)){
+					$('#results').html('<tr><td colspan="5" class="thinking">We could not find any resources, please try again.</td></tr>');
+				}
+
+			});
+
+		}
+
+		$('#the_search').click(function(){
+			filterResources();
+		});
+
+		// $(document).keypress(function(event){
+
+		// var keycode = (event.keyCode ? event.keyCode : event.which);
+		// 	if(keycode == '13'){
+		// 		resourcehubFilters();
+		// 	}
+
+		// });
+
+	});
+
+</script>
 
 <?php get_footer(); ?>

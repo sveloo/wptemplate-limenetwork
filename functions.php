@@ -34,4 +34,114 @@
         acf_add_options_page();
     }
     
+    // ADD AJAX TO WORDPRESS HEADER
+    add_action( 'wp_head', 'my_ajaxurl' );
+    function my_ajaxurl() {
+        $html = '<script type="text/javascript">';
+        $html .= 'var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '"';
+        $html .= '</script>';
+        echo $html;
+    }
+
+
+    // RESOURCE HUB FILTER
+
+    add_action( 'wp_ajax_resourcehub_filter', 'resourcehub_filter' );
+    add_action( 'wp_ajax_nopriv_resourcehub_filter', 'resourcehub_filter' );
+
+    function resourcehub_filter() {
+
+        // GET VARS
+
+        $the_topic_filter = $_POST['send_the_topic_filter'];
+        $the_resourcetype_filter = $_POST['send_the_resourcetype_filter'];
+
+        // LOOP ALL RESOURCES  (filter)
+        global $post;
+
+        // FOR NO FILTERS SELECTED
+
+        if( $the_topic_filter == '' && $the_resourcetype_filter == '' ){
+
+            $args = array(
+                'post_type' => 'resource',
+                'post_status' => 'publish',
+                'posts_per_page' => 3,
+                'orderby' => 'date',
+                'order' => 'DESC',
+            );
+
+        } else {
+
+            $args = array(
+                'post_type' => 'resource',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'orderby' => 'date',
+                'order' => 'DESC',
+
+                'tax_query' => array(
+
+                    'relation' => 'OR',
+
+                    array(
+                        'taxonomy' => 'topic_tax',
+                        'field'    => 'slug',
+                        'terms'    => array( $the_topic_filter )
+                    ),
+                    array(
+                        'taxonomy' => 'resource_tax',
+                        'field'    => 'slug',
+                        'terms'    => array( $the_resourcetype_filter )
+                    ),
+
+                ),
+            );
+        }
+
+        $myposts = get_posts( $args );
+
+        foreach ($myposts as $post) : start_wp(); ?>
+
+            <tr>
+                <td><a href="<?php the_field('link'); ?>"><?php the_title(); ?></a></td>
+                <td><?php the_title(); ?></td>
+                <td>
+                    <!-- GET ACF TAXONOMY -->
+                    <?php
+
+                        $terms = get_field('topic');
+
+                        if( $terms ):
+                        foreach( $terms as $term ):
+
+                             echo $term->name; echo ' ';
+
+                         endforeach;
+
+                    endif; ?>
+
+                </td>
+                <td><span class="new badge" data-badge-caption="
+
+                        <?php
+                            $terms = get_field('resourcetype');
+                            if( $terms ):
+                                foreach( $terms as $term ):
+                                    echo $term->name;
+                                endforeach;
+                            endif;
+                        ?>
+
+                "></span></td>
+            </tr>
+
+         <?php endforeach;
+
+        rewind_posts();
+
+        wp_die();
+
+    }
+
 ?>
