@@ -5,9 +5,7 @@
 <div class="page-header center-align">
     <h1><?php the_title(); ?></h1>
 </div>
-
-
-        
+   
 <div class="section">
     <div class="container">
         <div class="row">
@@ -31,71 +29,196 @@
 
 			    <select id="entry-level">
 			    	<option value="" disabled selected>Entry Level</option>
-			    	<option value="1">Undergraduate</option>
-					<option value="2">School leaver provisional</option>
-					<option value="3">Graduate</option>
+			    	<?php
+						$field_key = "field_59acb98c4db07";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>
 			    </select>
 
 			    <select id="country">
 		      		<option value="" disabled selected>Country</option>
-		      		<option value="1">Australia</option>
-		      		<option value="2">Aotearo/New Zealand</option>				      		
+			    	<?php
+						$field_key = "field_59acac7f13a01";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>			      		
 		    	</select>
 
 			    <select id="state">
 		      		<option value="" disabled selected>State</option>
-		      		<option value="1">North Island - NZ</option>
-		      		<option value="2">South Island - NZ</option>				      		
-		      		<option value="3">Australian Capital Territory</option>				      		
-		      		<option value="4">New South Wales</option>				      		
-		      		<option value="5">Northern Territory</option>				      		
-		      		<option value="6">Queensland</option>				      		
-		      		<option value="7">South Australia</option>				      		
-		      		<option value="8">Tasmania</option>				      		
-		      		<option value="9">Victoria</option>				      		
-		      		<option value="10">Western Australia</option>				      		
+			    	<?php
+						$field_key = "field_59acb05751e54";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>	
+					<?php
+						$field_key = "field_59acb0cccda21";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>				      		
 		    	</select>
 
 			    <select id="specific-pathway">
 		      		<option value="" disabled selected>Specific Indigenous Pathway</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb1b947ece";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>			      		
 		    	</select>
 
 			    <select id="umat">
 		      		<option value="" disabled selected>Required to complete UMAT</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb442fea95";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>				      		
 		    	</select>					    
 
 		    	<select id="gamsat">
 		      		<option value="" disabled selected>Required to complete GAMSAT</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb5c0ef356";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 			    <select id="marks">
 		      		<option value="" disabled selected>Entry excludes academic marks</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb68ba82a8";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 			    <select id="interview">
 		      		<option value="" disabled selected>Entry excludes an interview</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb69ca82a9";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>				      		
 		    	</select>					    
 
 		    	<select id="prerequisites">
 		      		<option value="" disabled selected>Pre-requisites required for entry</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb6a7a82aa";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 		    	<select id="prerequisites">
 		      		<option value="" disabled selected>There is a preparation course</option>
-		      		<option value="1">No</option>
-		      		<option value="2">Yes</option>				      		
+					<?php
+						$field_key = "field_59acb6b6a82ab";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 		    	<select id="university">
@@ -134,96 +257,46 @@
 			          	</tr>
 			        </thead>
 
-			        <tbody>
+			        <tbody id="results">
+			        <!-- AJAX! -->
+
+		            <!-- INITIAL STATE -->
+
+	               	<?php
+
+	                   	global $post;
+
+						$args = array(
+		                    'post_type' => 'pathway',
+		                    'post_status' => 'publish',
+		                    'posts_per_page' => -1,
+		                    'order' => 'DESC'
+						);
+
+						$myposts = get_posts( $args );
+
+						foreach ($myposts as $post) : start_wp();
+
+					?>	
 			          	<tr>
-							<td><a href="##">Doctor of Medicine and Surgery (MChD)</a></td>
-							<td>Australian National University (ANU)</td>
+							<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+							<td>            
+							<?php 
+				                $term = get_field('university');
+				                if( $term ): ?>
+				                    <?php echo $term->name; ?>
+				            <?php endif; ?>
+				            	
+				            </td>
 			          	</tr>
 
-			          	<tr>
-							<td><a href="##">The Bachelor of Medical Studies / Doctor of Medicine Program</a></td>
-							<td>Bond University</td>
-			          	</tr>
+					<?php
 
-			          	<tr>
-							<td><a href="##">Bachelor of Medicine Bachelor of Surgery (BMBS)</a></td>
-							<td>Deakin University</td>
-			          	</tr>
+						endforeach;
 
-			          	<tr>
-							<td><a href="##">Bachelor of Clinical Sciences, Doctor of Medicine (BClinSci MD)</a></td>
-							<td>Flinders University SA</td>
-			          	</tr>
+						rewind_posts();
 
-			          	<tr>
-							<td><a href="##">Doctor of Medicine (MD)</a></td>
-							<td>Flinders University NT</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medical Science (BMedSci)</a></td>
-							<td>Griffith University</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Doctor of Medicine (MD)</a></td>
-							<td>Griffith University</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medicine, Bachelor of Surgery (MBBS)</a></td>
-							<td>James Cook University (JCU)</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medicine/ Bachelor of Surgery (MBBS) Undergraduate</a></td>
-							<td>Monash University</td>
-			          	</tr>					          						          						          						
-
-			          	<tr>
-							<td><a href="##">Doctor of Medicine and Surgery (MChD)</a></td>
-							<td>Australian National University (ANU)</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">The Bachelor of Medical Studies / Doctor of Medicine Program</a></td>
-							<td>Bond University</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medicine Bachelor of Surgery (BMBS)</a></td>
-							<td>Deakin University</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Clinical Sciences, Doctor of Medicine (BClinSci MD)</a></td>
-							<td>Flinders University SA</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Doctor of Medicine (MD)</a></td>
-							<td>Flinders University NT</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medical Science (BMedSci)</a></td>
-							<td>Griffith University</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Doctor of Medicine (MD)</a></td>
-							<td>Griffith University</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medicine, Bachelor of Surgery (MBBS)</a></td>
-							<td>James Cook University (JCU)</td>
-			          	</tr>
-
-			          	<tr>
-							<td><a href="##">Bachelor of Medicine/ Bachelor of Surgery (MBBS) Undergraduate</a></td>
-							<td>Monash University</td>
-			          	</tr>								          	          						          						          	
+					?>		          								          	          						          						          	
 			        </tbody>
 			    </table>
         
@@ -245,5 +318,6 @@
         </div>
     </div>
 </div>
+
 
 <?php get_footer(); ?>
