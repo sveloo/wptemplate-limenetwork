@@ -105,7 +105,7 @@
 
             <tr>
                 <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
-                <td><?php the_title(); ?></td>
+                <td><?php echo the_field('author'); ?></td>
                 <td>
                     <!-- GET ACF TAXONOMY -->
                     <?php
@@ -124,14 +124,14 @@
                 </td>
                 <td><span class="new badge" data-badge-caption="
 
-                        <?php
-                            $terms = get_field('resourcetype');
-                            if( $terms ):
-                                foreach( $terms as $term ):
-                                    echo $term->name;
-                                endforeach;
-                            endif;
-                        ?>
+                    <?php
+                        $terms = get_field('resourcetype');
+                        if( $terms ):
+                            foreach( $terms as $term ):
+                                echo $term->name;
+                            endforeach;
+                        endif;
+                    ?>
 
                 "></span></td>
             </tr>
@@ -144,5 +144,74 @@
 
     }
 
+
+    // PATHWAYS FILTER
+
+    add_action( 'wp_ajax_pathways_filter', 'pathways_filter' );
+    add_action( 'wp_ajax_nopriv_pathways_filter', 'pathways_filter' );
+
+    function pathways_filter() {
+
+        // GET VARS
+        $the_university_filter = $_POST['send_the_university_filter'];
+
+        // LOOP ALL RESOURCES  (filter)
+        global $post;
+
+        // FOR NO FILTERS SELECTED
+
+        // if( $the_university_filter == '' && $the_resourcetype_filter == '' ){        
+        if( $the_university_filter == '' ){
+
+            $args = array(
+                'post_type' => 'pathway',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'orderby' => 'date',
+                'order' => 'DESC',
+            );
+
+        } else {
+
+            $args = array(
+                'post_type' => 'pathway',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'orderby' => 'date',
+                'order' => 'DESC',
+
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'uni_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_university_filter,
+                    ),
+                ),
+            
+            );
+        }
+
+        $myposts = get_posts( $args );
+
+        foreach ($myposts as $post) : start_wp(); ?>
+
+            <tr>
+                <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+                <td>            
+                    <?php 
+                        $term = get_field('university');
+                        if( $term ): ?>
+                            <?php echo $term->name; ?>
+                    <?php endif; ?>
+                </td>
+            </tr>
+
+         <?php endforeach;
+
+        rewind_posts();
+
+        wp_die();
+
+    }
 
 ?>

@@ -104,7 +104,7 @@
 				?>	        
 		          	<tr>
 						<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
-						<td><?php the_title(); ?></td>
+						<td><?php echo the_field('author'); ?></td>
 						<td>
 							<!-- GET ACF TAXONOMY -->
 							<?php
