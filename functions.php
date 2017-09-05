@@ -154,14 +154,15 @@
 
         // GET VARS
         $the_university_filter = $_POST['send_the_university_filter'];
+        $the_entrylevel_filter = $_POST['send_the_entrylevel_filter'];
+        $the_country_filter = $_POST['send_the_country_filter'];
 
         // LOOP ALL RESOURCES  (filter)
         global $post;
 
         // FOR NO FILTERS SELECTED
 
-        // if( $the_university_filter == '' && $the_resourcetype_filter == '' ){        
-        if( $the_university_filter == '' ){
+        if( $the_university_filter == '' && $the_entrylevel_filter == ''  ){
 
             $args = array(
                 'post_type' => 'pathway',
@@ -171,9 +172,11 @@
                 'order' => 'DESC',
             );
 
-        } else {
+        } 
+        else {
 
             $args = array(
+
                 'post_type' => 'pathway',
                 'post_status' => 'publish',
                 'posts_per_page' => -1,
@@ -187,9 +190,17 @@
                         'terms'    => $the_university_filter,
                     ),
                 ),
-            
-            );
+
+                //         'meta_key' => 'entry_level',
+                //         'meta_value' => $the_entrylevel_filter,
+
+                //         'meta_key' => 'country',
+                //         'meta_value' => $the_country_filter,
+
+
+           );
         }
+
 
         $myposts = get_posts( $args );
 
@@ -200,6 +211,7 @@
                 <td>            
                     <?php 
                         $term = get_field('university');
+                        $test = get_field('entry_level');
                         if( $term ): ?>
                             <?php echo $term->name; ?>
                     <?php endif; ?>

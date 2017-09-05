@@ -281,12 +281,11 @@
 			          	<tr>
 							<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 							<td>            
-							<?php 
-				                $term = get_field('university');
-				                if( $term ): ?>
-				                    <?php echo $term->name; ?>
-				            <?php endif; ?>
-				            	
+								<?php 
+					                $term = get_field('university');
+					                if( $term ): ?>
+					                    <?php echo $term->name; ?>
+					            <?php endif; ?>
 				            </td>
 			          	</tr>
 
@@ -326,8 +325,8 @@
 		// PATHWAYS FILTERS
 		function filterPathways(){
 
-			// var the_entrylevel_filter = $('#the_entrylevel_selecter').val();
-			// var the_country_filter = $('#the_country_selecter').val();
+			var the_entrylevel_filter = $('#the_entrylevel_selecter').val();
+			var the_country_filter = $('#the_country_selecter').val();
 			// var the_state_filter = $('#the_state_selecter').val();
 			// var the_specificpathway_filter = $('#the_specificpathway_selecter').val();
 			// var the_umat_filter = $('#the_umat_selecter').val();
@@ -344,8 +343,8 @@
 			// AJAX CALL
 			var data = {
 				action: 'pathways_filter',
-				// send_the_entrylevel_filter : the_entrylevel_filter,
-				// send_the_country_filter : the_country_filter,
+				send_the_entrylevel_filter : the_entrylevel_filter,
+				send_the_country_filter : the_country_filter,
 				// send_the_state_filter : the_state_filter,
 				// send_the_specificpathway_level_filter : the_specificpathway_filter,
 				// send_the_umat_filter : the_umat_filter,
