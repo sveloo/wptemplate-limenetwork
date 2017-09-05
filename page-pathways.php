@@ -25,7 +25,21 @@
     <div class="container">
 
         <div class="row">
-	        <div class="input-field col s12 m4">
+	        <div class="input-field col s12 m3">
+
+		    	<select id="the_university_selecter">
+		      		<option value="" disabled selected>University</option>
+						<?php
+							$terms = get_terms('uni_tax');
+							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+							     foreach ( $terms as $term ) {
+								    ?>
+									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
+								   <?php
+							     }
+							 }
+		    			?>			      		
+		    	</select>		
 
 			    <select id="the_entrylevel_selecter">
 			    	<option value="" disabled selected>Entry Level</option>
@@ -221,20 +235,6 @@
 					?>					      		
 		    	</select>
 
-		    	<select id="the_university_selecter">
-		      		<option value="" disabled selected>University</option>
-						<?php
-							$terms = get_terms('uni_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>			      		
-		    	</select>		
-
 		    	<div class="row">
 		    		<div class="col s6">
 			    		<a id="the_search" class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Search</a>
@@ -247,7 +247,7 @@
 			</div>
 
 
-            <div class="col s12 m8">
+            <div class="col s12 m9">
 			     <table class="striped resources-results">
 			        <thead>
 			         	<tr>
@@ -327,14 +327,14 @@
 
 			var the_entrylevel_filter = $('#the_entrylevel_selecter').val();
 			var the_country_filter = $('#the_country_selecter').val();
-			// var the_state_filter = $('#the_state_selecter').val();
-			// var the_specificpathway_filter = $('#the_specificpathway_selecter').val();
-			// var the_umat_filter = $('#the_umat_selecter').val();
-			// var the_gamsat_filter = $('#the_gamsat_selecter').val();
-			// var the_marks_filter = $('#the_marks_selecter').val();
-			// var the_interview_filter = $('#the_interview_selecter').val();
-			// var the_prerequisites_filter = $('#the_prerequisites_selecter').val();
-			// var the_prepcourse_filter = $('#the_prepcourse_selecter').val();
+			var the_state_filter = $('#the_state_selecter').val();
+			var the_specificpathway_filter = $('#the_specificpathway_selecter').val();
+			var the_umat_filter = $('#the_umat_selecter').val();
+			var the_gamsat_filter = $('#the_gamsat_selecter').val();
+			var the_marks_filter = $('#the_marks_selecter').val();
+			var the_interview_filter = $('#the_interview_selecter').val();
+			var the_prerequisites_filter = $('#the_prerequisites_selecter').val();
+			var the_prepcourse_filter = $('#the_prepcourse_selecter').val();
 			var the_university_filter = $('#the_university_selecter').val();
 
 			$('#results').html('');
@@ -345,14 +345,14 @@
 				action: 'pathways_filter',
 				send_the_entrylevel_filter : the_entrylevel_filter,
 				send_the_country_filter : the_country_filter,
-				// send_the_state_filter : the_state_filter,
-				// send_the_specificpathway_level_filter : the_specificpathway_filter,
-				// send_the_umat_filter : the_umat_filter,
-				// send_the_gamsat_filter : the_gamsat_filter,
-				// send_the_marks_filter : the_marks_filter,
-				// send_the_interview_filter : the_interview_filter,
-				// send_the_prerequisites_filter : the_prerequisites_filter,
-				// send_the_prepcourse_filter : the_prepcourse_filter,
+				send_the_state_filter : the_state_filter,
+				send_the_specificpathway_level_filter : the_specificpathway_filter,
+				send_the_umat_filter : the_umat_filter,
+				send_the_gamsat_filter : the_gamsat_filter,
+				send_the_marks_filter : the_marks_filter,
+				send_the_interview_filter : the_interview_filter,
+				send_the_prerequisites_filter : the_prerequisites_filter,
+				send_the_prepcourse_filter : the_prepcourse_filter,
 				send_the_university_filter : the_university_filter
 			};
 

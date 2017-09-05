@@ -191,14 +191,23 @@
                     ),
                 ),
 
-                //         'meta_key' => 'entry_level',
-                //         'meta_value' => $the_entrylevel_filter,
+                // 'meta_query' => array(
+                //     'relation' => 'AND',
+                //     array(
+                //         'key' => 'entry_level',
+                //         'value' => $the_entrylevel_filter,
+                //     ),
+                //     array(
+                //         'key' => 'country',
+                //         'value' => $the_country_filter,
+                //     ),                    
+                //     array(
+                //         'key' => 'state',
+                //         'value' => $the_state_filter,
+                //     )
+                // )
 
-                //         'meta_key' => 'country',
-                //         'meta_value' => $the_country_filter,
-
-
-           );
+            );
         }
 
 
@@ -211,7 +220,6 @@
                 <td>            
                     <?php 
                         $term = get_field('university');
-                        $test = get_field('entry_level');
                         if( $term ): ?>
                             <?php echo $term->name; ?>
                     <?php endif; ?>
@@ -225,5 +233,6 @@
         wp_die();
 
     }
+
 
 ?>

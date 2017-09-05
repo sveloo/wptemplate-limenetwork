@@ -26,8 +26,7 @@
                                     <td style="width: 20%;"><strong>Location</strong></td>
                                     <td>
                                         <?php the_field('city'); ?>, 
-                                        <?php if( get_field('aus_state') ): the_field('aus_state'); endif; ?>
-                                        <?php if( get_field('nz_state') ): the_field('nz_state'); endif; ?>
+                                        <?php the_field('state'); ?>
                                         <?php the_field('country'); ?>
                                     </td>
                                 </tr>
