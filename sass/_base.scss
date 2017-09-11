@@ -69,6 +69,16 @@ nav {
 //
 .dropdown-content{
     overflow: visible !important;
+    li {
+        background-color: $light-purple !important;
+    }
+    li a {    
+        color: white !important;
+        &:hover {
+            color: $green !important;
+        }
+    }
+
 }
 
 

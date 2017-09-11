@@ -29,7 +29,7 @@
                         );
                     ?>
                     <!-- Mobile Menu -->
-                    <?php
+<!--                     <?php
                         wp_nav_menu( array(
                             'theme_location' => 'mobile_menu',
                             'container' => 'ul',
@@ -38,7 +38,7 @@
                             'walker' => new wp_materialize_navwalker()
                             )
                         );
-                    ?>
+                    ?> -->
                 </div>
             </nav>
         </header>
