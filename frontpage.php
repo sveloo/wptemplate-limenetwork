@@ -78,7 +78,7 @@
                         <span class="new badge" data-badge-caption="
 
                                 <?php
-                                    $terms = get_field('resource_type');
+                                    $terms = get_field('resourcetype');
                                     if( $terms ):
                                         foreach( $terms as $term ):
                                             echo $term->name;

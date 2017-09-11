@@ -18,22 +18,27 @@
                     <a href="/" class="brand-logo"><img src="<?php echo get_template_directory_uri(); ?>/images/lime-circle.png" class="">
                     <span class="logo-text"><span class="light-green-text">THE</span><span class="green-text">LIME</span><span class="light-green-text">NETWORK</span></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Students</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Subscribe</a></li>
-                        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Pathways</a></li>
-                        <li><a href="#">Students</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Subscribe</a></li>
-                    </ul>
+                    <!-- Main Menu -->
+                    <?php
+                        wp_nav_menu( array(
+                            'menu' => 'Main Menu',
+                            'theme_location' => 'main_menu',
+                            'menu_class' =>'right hide-on-med-and-down',
+                            'walker' => new wp_materialize_navwalker()
+                            )
+                        );
+                    ?>
+                    <!-- Mobile Menu -->
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'mobile_menu',
+                            'container' => 'ul',
+                            'menu_id' => 'mobile-demo',
+                            'menu_class' =>'side-nav',
+                            'walker' => new wp_materialize_navwalker()
+                            )
+                        );
+                    ?>
                 </div>
             </nav>
         </header>

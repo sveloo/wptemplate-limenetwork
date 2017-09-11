@@ -6815,6 +6815,9 @@ nav {
     nav ul li a:hover {
       color: #C9DE92; }
 
+.dropdown-content {
+  overflow: visible !important; }
+
 .page-header {
   background: linear-gradient(rgba(0, 130, 170, 0), white), url(../images/green-bg.jpg);
   height: 200px;

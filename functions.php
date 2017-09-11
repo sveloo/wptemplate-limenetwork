@@ -24,7 +24,8 @@
     function lime_theme_scripts() {
         wp_enqueue_script('materialise-js', get_template_directory_uri() . '/js/materialize.min.js', array('jquery'), '', true );
         wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true );
-        wp_enqueue_script('lime-js', get_template_directory_uri() . '/js/scripts.min.js', array('slick'), '', true );
+        // wp_enqueue_script('lime-js', get_template_directory_uri() . '/js/scripts.min.js', array('slick'), '', true );
+        wp_enqueue_script('lime-js', get_template_directory_uri() . '/src/scripts.js', array('slick'), '', true );
     }
     add_action('wp_enqueue_scripts', 'lime_theme_scripts');
 
@@ -33,7 +34,23 @@
     if( function_exists('acf_add_options_page') ) {
         acf_add_options_page();
     }
-    
+
+    // REGISTER MATERIALIZE NAV WALKER
+    require_once get_template_directory() . '/wp_materialize_navwalker.php';
+
+    // NAV MENUS
+    function register_lime_menus() {
+
+    register_nav_menus(
+        array(
+            'main_menu' => __('Main Menu'),
+            'mobile_menu' => __('Mobile Menu')
+            )
+        );
+    }
+    add_action('init', 'register_lime_menus');
+
+
     // ADD AJAX TO WORDPRESS HEADER
     add_action( 'wp_head', 'my_ajaxurl' );
     function my_ajaxurl() {
