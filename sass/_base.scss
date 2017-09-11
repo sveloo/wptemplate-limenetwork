@@ -61,25 +61,29 @@ nav {
         }
     }
 
-}
 
+    //
+    // MATERIALIZE NAV BAR TWEAK
+    //
 
-//
-// MATERIALIZE NAV BAR TWEAK
-//
-.dropdown-content{
-    overflow: visible !important;
-    li {
-        background-color: $light-purple !important;
-    }
-    li a {    
-        color: white !important;
-        &:hover {
-            color: $green !important;
+    .dropdown-content{
+        overflow: visible !important;
+        li {
+            background-color: $light-purple !important;
         }
+        li a {    
+            color: white !important;
+            &:hover {
+                color: $green !important;
+            }
+        }
+
     }
 
 }
+
+
+
 
 
 //

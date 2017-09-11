@@ -6814,15 +6814,14 @@ nav {
     color: white; }
     nav ul li a:hover {
       color: #C9DE92; }
-
-.dropdown-content {
-  overflow: visible !important; }
-  .dropdown-content li {
-    background-color: #8e3373 !important; }
-  .dropdown-content li a {
-    color: white !important; }
-    .dropdown-content li a:hover {
-      color: #C9DE92 !important; }
+  nav .dropdown-content {
+    overflow: visible !important; }
+    nav .dropdown-content li {
+      background-color: #8e3373 !important; }
+    nav .dropdown-content li a {
+      color: white !important; }
+      nav .dropdown-content li a:hover {
+        color: #C9DE92 !important; }
 
 .page-header {
   background: linear-gradient(rgba(0, 130, 170, 0), white), url(../images/green-bg.jpg);
