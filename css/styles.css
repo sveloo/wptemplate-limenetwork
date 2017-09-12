@@ -6808,6 +6808,10 @@ nav {
       nav .brand-logo .logo-text .light-green-text {
         color: #C9DE92 !important;
         background-color: none !important; }
+    @media only screen and (max-width: 992px) {
+      nav .brand-logo {
+        left: 25%;
+        transform: translateX(-25%); } }
   nav ul li a {
     font-size: 1.1111111111em;
     padding: 8px 15px;
