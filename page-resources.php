@@ -49,7 +49,7 @@
 			    </select>
 			    <label>Topic</label>
 			</div>
-			<div class="input-field col s5">
+			<div class="input-field col s4">
 			    <select id="the_resourcetype_selecter" multiple>
 		      		<option value="" disabled selected>Or by resource type</option>
 						<?php
@@ -65,8 +65,9 @@
 		    	</select>
 		    	<label>Resource type</label>
 			</div>
-	        <div class="col s2">
+	        <div class="col s3">
 	        	<a id="the_search" class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Search</a>
+	        	<a id="the_reset" class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Reset</a>
 	        </div>
         </div>
 
@@ -200,6 +201,12 @@
 		$('#the_search').click(function(){
 			filterResources();
 		});
+
+		$('#the_reset').click(function(){
+			$('#the_topic_selecter').val('');
+			$('#the_resourcetype_selecter').val('');
+			$('select').material_select();
+		})		
 
 		// $(document).keypress(function(event){
 

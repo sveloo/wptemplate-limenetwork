@@ -186,7 +186,7 @@
 			    		<a id="the_search" class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Search</a>
 					</div>
 					<div class="col s6">
-						<a class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Reset</a>
+						<a id="the_reset" class="waves-effect waves-light btn btn-purple"><i class="material-icons"></i>Reset</a>
 					</div>
 		    	</div>
 
@@ -320,6 +320,21 @@
 		$('#the_search').click(function(){
 			filterPathways();
 		});
+
+		$('#the_reset').click(function(){
+			$('#the_university_selecter').val('');
+			$('#the_entrylevel_selecter').val('');
+			$('#the_country_selecter').val('');
+			$('#the_state_selecter').val('');
+			$('#the_sip_selecter').val('');
+			$('#the_umat_selecter').val('');
+			$('#the_gamsat_selecter').val('');
+			$('#the_marks_selecter').val('');
+			$('#the_interview_selecter').val('');
+			$('#the_prereq_selecter').val('');
+			$('#the_prep_selecter').val('');
+			$('select').material_select();
+		})
 
 		// $(document).keypress(function(event){
 
