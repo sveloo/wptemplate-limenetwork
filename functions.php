@@ -173,13 +173,22 @@
         $the_university_filter = $_POST['send_the_university_filter'];
         $the_entrylevel_filter = $_POST['send_the_entrylevel_filter'];
         $the_country_filter = $_POST['send_the_country_filter'];
+        $the_state_filter = $_POST['send_the_state_filter'];
+        $the_sip_filter = $_POST['send_the_sip_filter'];
+        $the_umat_filter = $_POST['send_the_umat_filter'];
+        $the_gamsat_filter = $_POST['send_the_gamsat_filter'];
+        $the_marks_filter = $_POST['send_the_marks_filter'];
+        $the_interview_filter = $_POST['send_the_interview_filter'];
+        $the_prereq_filter = $_POST['send_the_prereq_filter'];
+        $the_prep_filter = $_POST['send_the_prep_filter'];
+
 
         // LOOP ALL RESOURCES  (filter)
         global $post;
 
         // FOR NO FILTERS SELECTED
 
-        if( $the_university_filter == '' && $the_entrylevel_filter == ''  ){
+        if( $the_university_filter == '' && $the_entrylevel_filter == '' && $the_country_filter == '' && $the_state_filter == '' && $the_sip_filter == '' && $the_umat_filter == '' && $the_gamsat_filter == '' && $the_marks_filter == '' && $the_interview_filter == '' && $the_prereq_filter == '' && $the_prep_filter == '' ){
 
             $args = array(
                 'post_type' => 'pathway',
@@ -190,6 +199,7 @@
             );
 
         } 
+        
         else {
 
             $args = array(
@@ -201,28 +211,76 @@
                 'order' => 'DESC',
 
                 'tax_query' => array(
+
+                    'relation' => 'OR',
+                    
                     array(
                         'taxonomy' => 'uni_tax',
                         'field'    => 'slug',
                         'terms'    => $the_university_filter,
                     ),
-                ),
 
-                // 'meta_query' => array(
-                //     'relation' => 'AND',
-                //     array(
-                //         'key' => 'entry_level',
-                //         'value' => $the_entrylevel_filter,
-                //     ),
-                //     array(
-                //         'key' => 'country',
-                //         'value' => $the_country_filter,
-                //     ),                    
-                //     array(
-                //         'key' => 'state',
-                //         'value' => $the_state_filter,
-                //     )
-                // )
+                    array(
+                        'taxonomy' => 'entry_level_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_entrylevel_filter
+                    ),
+
+                    array(
+                        'taxonomy' => 'country_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_country_filter
+                    ),
+
+                    array(
+                        'taxonomy' => 'state_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_state_filter
+                    ),
+
+                    array(
+                        'taxonomy' => 'sip_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_sip_filter,
+                    ),
+
+                    array(
+                        'taxonomy' => 'umat_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_umat_filter
+                    ),
+
+                    array(
+                        'taxonomy' => 'gamsat_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_gamsat_filter
+                    ),                                                                                
+
+                    array(
+                        'taxonomy' => 'marks_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_marks_filter
+                    ),   
+
+                    array(
+                        'taxonomy' => 'interview_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_interview_filter
+                    ),   
+
+                    array(
+                        'taxonomy' => 'prereq_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_prereq_filter
+                    ),                       
+
+                    array(
+                        'taxonomy' => 'prep_tax',
+                        'field'    => 'slug',
+                        'terms'    => $the_prep_filter
+                    ),   
+
+                ),
 
             );
         }

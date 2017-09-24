@@ -6830,10 +6830,10 @@ nav {
 .page-header {
   background: linear-gradient(rgba(0, 130, 170, 0), white), url(../images/green-bg.jpg);
   height: 200px;
-  padding: 50px 0px 0px 0px; }
+  padding: 50px 0px 50px 0px; }
 
 .section {
-  margin: 25px 0px; }
+  margin: 100px 0px; }
 
 footer {
   background-image: linear-gradient(to right, #431836, #8e3373); }

@@ -26,13 +26,27 @@
                                     <td style="width: 20%;"><strong>Location</strong></td>
                                     <td>
                                         <?php the_field('city'); ?>, 
-                                        <?php the_field('state'); ?>
-                                        <?php the_field('country'); ?>
+                                        <?php 
+                                            $term = get_field('state');
+                                            if( $term ): ?>
+                                                <?php echo $term->name; ?>
+                                        <?php endif; ?>
+                                        <?php 
+                                            $term = get_field('country');
+                                            if( $term ): ?>
+                                                <?php echo $term->name; ?>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><strong>Entry level</strong></td>
-                                    <td><?php the_field('entry_level'); ?></td>
+                                    <td>
+                                        <?php 
+                                            $term = get_field('entry_level');
+                                            if( $term ): ?>
+                                                <?php echo $term->name; ?>
+                                        <?php endif; ?>                                            
+                                    </td>
                                 </tr>  
                                 <tr>
                                     <td><strong>Duration</strong></td>

@@ -43,142 +43,196 @@
 
 			    <select id="the_entrylevel_selecter">
 			    	<option value="" disabled selected>Entry Level</option>
-						<?php
-							$terms = get_terms('entry_level_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>	
+			    	<?php
+						$field_key = "field_59acb98c4db07";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>
 			    </select>
 
 			    <select id="the_country_selecter">
 		      		<option value="" disabled selected>Country</option>
-						<?php
-							$terms = get_terms('country_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>			      		
+			    	<?php
+						$field_key = "field_59acac7f13a01";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>			      		
 		    	</select>
 
 			    <select id="the_state_selecter">
 		      		<option value="" disabled selected>State</option>
-						<?php
-							$terms = get_terms('state_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>				      		
+			    	<?php
+						$field_key = "field_59acb05751e54";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>	
+					<?php
+						$field_key = "field_59acb0cccda21";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>				      		
 		    	</select>
 
-			    <select id="the_sip_selecter">
+			    <select id="the_specificpathway_selecter">
 		      		<option value="" disabled selected>Specific Indigenous Pathway</option>
-						<?php
-							$terms = get_terms('sip_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>      		
+					<?php
+						$field_key = "field_59acb1b947ece";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>			      		
 		    	</select>
 
 			    <select id="the_umat_selecter">
 		      		<option value="" disabled selected>Required to complete UMAT</option>
-						<?php
-							$terms = get_terms('umat_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>		      		
+					<?php
+						$field_key = "field_59acb442fea95";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>				      		
 		    	</select>					    
 
 		    	<select id="the_gamsat_selecter">
 		      		<option value="" disabled selected>Required to complete GAMSAT</option>
-						<?php
-							$terms = get_terms('gamsat_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>				      		
+					<?php
+						$field_key = "field_59acb5c0ef356";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 			    <select id="the_marks_selecter">
 		      		<option value="" disabled selected>Entry excludes academic marks</option>
-						<?php
-							$terms = get_terms('marks_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>				      		
+					<?php
+						$field_key = "field_59acb68ba82a8";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 			    <select id="the_interview_selecter">
 		      		<option value="" disabled selected>Entry excludes an interview</option>
-						<?php
-							$terms = get_terms('interview_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>				      		
+					<?php
+						$field_key = "field_59acb69ca82a9";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>				      		
 		    	</select>					    
 
-		    	<select id="the_prereq_selecter">
+		    	<select id="the_prerequisites_selecter">
 		      		<option value="" disabled selected>Pre-requisites required for entry</option>
-						<?php
-							$terms = get_terms('prereq_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>				      		
+					<?php
+						$field_key = "field_59acb6a7a82aa";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
-		    	<select id="the_prep_selecter">
+		    	<select id="the_prepcourse_selecter">
 		      		<option value="" disabled selected>There is a preparation course</option>
-						<?php
-							$terms = get_terms('prep_tax');
-							 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-							     foreach ( $terms as $term ) {
-								    ?>
-									 <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
-								   <?php
-							     }
-							 }
-		    			?>				      		
+					<?php
+						$field_key = "field_59acb6b6a82ab";
+						$field = get_field_object($field_key);
+						
+						if( $field )
+						{
+					    
+					        foreach( $field['choices'] as $k => $v )
+					        {
+					            echo '<option value="' . $k . '">' . $v . '</option>';
+					        }
+
+						}
+					?>					      		
 		    	</select>
 
 		    	<div class="row">
@@ -275,13 +329,13 @@
 			var the_entrylevel_filter = $('#the_entrylevel_selecter').val();
 			var the_country_filter = $('#the_country_selecter').val();
 			var the_state_filter = $('#the_state_selecter').val();
-			var the_sip_filter = $('#the_sip_selecter').val();
+			var the_specificpathway_filter = $('#the_specificpathway_selecter').val();
 			var the_umat_filter = $('#the_umat_selecter').val();
 			var the_gamsat_filter = $('#the_gamsat_selecter').val();
 			var the_marks_filter = $('#the_marks_selecter').val();
 			var the_interview_filter = $('#the_interview_selecter').val();
-			var the_prereq_filter = $('#the_prereq_selecter').val();
-			var the_prep_filter = $('#the_prep_selecter').val();
+			var the_prerequisites_filter = $('#the_prerequisites_selecter').val();
+			var the_prepcourse_filter = $('#the_prepcourse_selecter').val();
 			
 
 			$('#results').html('');
@@ -294,13 +348,13 @@
 				send_the_entrylevel_filter : the_entrylevel_filter,
 				send_the_country_filter : the_country_filter,
 				send_the_state_filter : the_state_filter,
-				send_the_sip_filter : the_sip_filter,
+				send_the_specificpathway_level_filter : the_specificpathway_filter,
 				send_the_umat_filter : the_umat_filter,
 				send_the_gamsat_filter : the_gamsat_filter,
 				send_the_marks_filter : the_marks_filter,
 				send_the_interview_filter : the_interview_filter,
-				send_the_prereq_filter : the_prereq_filter,
-				send_the_prep_filter : the_prep_filter,
+				send_the_prerequisites_filter : the_prerequisites_filter,
+				send_the_prepcourse_filter : the_prepcourse_filter,
 				
 			};
 
